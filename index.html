@@ -2529,6 +2529,378 @@
       .dossier-kv-grid { grid-template-columns: 1fr; }
       .dossier-paper { padding: 22px 18px; }
     }
+
+    /* ==========================================================================
+       TYPOGRAPHY POLISH (TEXT-WRAP PRETTY/BALANCE) + LOGO 2 + MOBILE FIXES
+       ========================================================================== */
+    .rl-logo2 {
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .brand-wordmark .wm-cloud {
+      color: var(--emerald);
+      font-weight: 600;
+    }
+
+    /* Anti-widow typography across headings and body text */
+    h1, h2, h3, h4,
+    .hero-title, .section-title, .wall-heading, .rule-detail-title,
+    .router-title, .modal-title, .finding-title, .mvp-name, .q-buyer-title,
+    .plan-price, .ledger-figure, .verdict-heading {
+      text-wrap: balance;
+    }
+
+    p, li, td, th,
+    .hero-subheadline, .section-subtitle, .finding-sub, .ticket-body,
+    .q-question, .q-resp-text, .rule-detail-text, .rule-meta-box,
+    .mvp-text, .verdict-detail, .footer-tagline, .footer-disclaimer,
+    .ledger-caption, .plan-sub {
+      text-wrap: pretty;
+    }
+
+    /* Strict CSS Grid/Flex overflow containment across ALL viewports */
+    html, body {
+      overflow-x: clip;
+      max-width: 100%;
+    }
+
+    .hero-grid > *,
+    .workbench,
+    .rulebook-grid,
+    .rulebook-grid > *,
+    .rule-detail-split,
+    .rule-detail-split > *,
+    .rule-plain-pane,
+    .rule-code-pane,
+    .legal-wall-frame > *,
+    .pricing-layout > *,
+    .trust-banner-grid > *,
+    .router-verdict > *,
+    .q-row > * {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .rule-plain-pane,
+    .rule-code-pane,
+    .rule-detail-title,
+    .rule-detail-text,
+    .rule-meta-box,
+    .verdict-heading,
+    .verdict-detail {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .json-rule-box {
+      max-width: 100%;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Mobile Stacked Residency Flow (Hidden on Desktop, Shown <= 760px) */
+    .map-mobile-flow {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .m-node {
+      background-color: var(--bg-paper);
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+
+    .m-node-ie {
+      border-color: var(--emerald);
+    }
+
+    .m-node-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-secondary);
+      margin-bottom: 3px;
+    }
+
+    .m-node-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+      margin-bottom: 2px;
+    }
+
+    .m-node-sub {
+      font-size: 0.8rem;
+      color: var(--ink-secondary);
+      line-height: 1.4;
+    }
+
+    .m-node-note {
+      margin-top: 6px;
+      font-size: 0.77rem;
+      font-weight: 600;
+      color: var(--emerald);
+    }
+
+    .m-node-note.is-legacy {
+      color: var(--terracotta);
+    }
+
+    .m-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0;
+    }
+
+    .m-connector-arrow {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--emerald);
+      line-height: 1;
+    }
+
+    .m-connector.is-legacy .m-connector-arrow {
+      color: var(--terracotta);
+    }
+
+    .m-connector-pill {
+      width: 100%;
+      text-align: center;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-paper);
+      border: 1.5px solid var(--emerald);
+      color: var(--emerald);
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .m-connector.is-legacy .m-connector-pill {
+      background-color: var(--terracotta-tint);
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+    }
+
+    .m-eu-box {
+      background-color: rgba(236, 253, 245, 0.65);
+      border: 1.5px dashed var(--emerald);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .m-eu-box.is-legacy {
+      background-color: rgba(255, 247, 237, 0.7);
+      border-color: var(--terracotta);
+    }
+
+    .m-eu-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--emerald);
+    }
+
+    .m-eu-label.is-legacy {
+      color: var(--terracotta);
+    }
+
+    .m-eu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .m-rail-pill {
+      align-self: center;
+      padding: 4px 10px;
+      background-color: var(--bg-ground);
+      border: 1px solid var(--border-mid);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+    }
+
+    /* Responsive Mobile Overrides (<= 760px) — Zero Clipping on iPhone/Android */
+    @media (max-width: 760px) {
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      /* 1. Data Residency Map: Swap 720px SVG for clean stacked mobile flow */
+      .map-canvas {
+        padding: 14px;
+        overflow-x: visible;
+      }
+      .map-svg {
+        display: none;
+      }
+      .map-mobile-flow {
+        display: flex;
+      }
+      .mode-switcher {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+      .mode-btn {
+        padding: 10px 8px;
+        font-size: 0.77rem;
+        white-space: normal;
+        line-height: 1.25;
+      }
+
+      /* 2. Rulebook Inspector: Clean 2x2 grid tabs + zero right-edge clipping */
+      .rule-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow-x: visible;
+      }
+      .rule-nav-btn {
+        min-width: 0;
+        width: 100%;
+        padding: 13px 12px;
+        border-right: 1px solid var(--border-hairline);
+        border-bottom: 1px solid var(--border-hairline);
+      }
+      .rule-nav-btn:nth-child(2n) {
+        border-right: none;
+      }
+      .rule-nav-name {
+        font-size: 0.88rem;
+        line-height: 1.25;
+      }
+      .rule-plain-pane,
+      .rule-code-pane {
+        padding: 20px 16px;
+      }
+      .rule-code-pane > div > div:first-child {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      /* 3. Interactive Boundary Router: Stack badge above verdict text (Zero 1-word column!) */
+      .router-box {
+        padding: 18px 16px;
+      }
+      .router-pills {
+        flex-direction: column;
+      }
+      .router-pill {
+        width: 100%;
+        white-space: normal;
+        line-height: 1.35;
+      }
+      .router-verdict {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 14px 14px;
+      }
+      .verdict-badge {
+        width: fit-content;
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.3;
+      }
+
+      /* 4. Comparison Table: Transform into full-width stacked dimension cards */
+      .compare-wrap {
+        background-color: transparent;
+        border: none;
+        overflow-x: visible;
+      }
+      .compare-table {
+        min-width: 0;
+        width: 100%;
+        display: block;
+      }
+      .compare-table thead {
+        display: none;
+      }
+      .compare-table tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .compare-table tr {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-paper);
+        border: 1px solid var(--border-hairline);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+      .compare-table td {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--border-hairline);
+      }
+      .compare-table td.cmp-dim {
+        background-color: var(--bg-surface);
+        font-family: var(--font-display);
+        font-size: 0.94rem;
+        border-bottom: 1px solid var(--border-mid);
+      }
+      .compare-table td[data-label]::before {
+        content: attr(data-label);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--ink-secondary);
+      }
+      .compare-table td.col-regulens {
+        border-left: 3px solid var(--emerald);
+        border-right: none;
+      }
+      .compare-table td.col-regulens::before {
+        color: var(--emerald);
+      }
+
+      /* 5. General Mobile Polish: Clocks, Workbench Tabs, Buttons */
+      .wb-tab {
+        padding: 10px 6px;
+        font-size: 0.74rem;
+      }
+      .btn {
+        white-space: normal;
+        line-height: 1.25;
+      }
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-ctas .btn {
+        width: 100%;
+      }
+      .overlap-scale {
+        font-size: 0.65rem;
+        gap: 4px;
+      }
+      .clock-card {
+        padding: 18px 16px;
+      }
+      .plan-box, .calc-box {
+        padding: 22px 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2542,17 +2914,9 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="brand-link" aria-label="ReguLens Cloud Home">
-        <!-- Bespoke Geometric Optical-Lens SVG Mark (1.5px stroke) -->
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="1.75" y="1.75" width="24.5" height="24.5" rx="4" stroke="#141413" stroke-width="1.5"/>
-          <circle cx="14" cy="14" r="6.5" stroke="#064E3B" stroke-width="1.5"/>
-          <line x1="14" y1="3.5" x2="14" y2="7.5" stroke="#141413" stroke-width="1.5"/>
-          <line x1="14" y1="20.5" x2="14" y2="24.5" stroke="#141413" stroke-width="1.5"/>
-          <line x1="3.5" y1="14" x2="7.5" y2="14" stroke="#141413" stroke-width="1.5"/>
-          <line x1="20.5" y1="14" x2="24.5" y2="14" stroke="#141413" stroke-width="1.5"/>
-          <circle cx="14" cy="14" r="2" fill="#064E3B"/>
-        </svg>
-        <span class="brand-wordmark">ReguLens Cloud</span>
+        <!-- Locked Logo 2: Solid Emerald Cloud + White Halo + Terracotta Aperture -->
+        <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
+        <span class="brand-wordmark">ReguLens <span class="wm-cloud">Cloud</span></span>
       </a>
 
       <nav class="nav-links" aria-label="Primary Navigation">
@@ -2624,7 +2988,7 @@
         <div class="hero-grid">
           <!-- Left Column (55%) -->
           <div>
-            <h1 class="hero-title">Close European enterprise deals without six-figure compliance bloat.</h1>
+            <h1 class="hero-title">Close European Enterprise Deals Without Six-Figure Compliance Bloat</h1>
             <p class="hero-subheadline">
               Automated, deterministic rule-based GDPR and EU AI Act checks for mid-market U.S. software companies (50&ndash;250 employees) selling into Europe. Hosted 100% in Ireland with zero GenAI guesswork, producing audit-ready Evidence Packets for European procurement reviews.
             </p>
@@ -2680,7 +3044,7 @@
                 <div class="finding-item is-open">
                   <button type="button" class="finding-trigger" aria-expanded="true">
                     <div>
-                      <div class="finding-title">Pre-consent marketing tracker firing in DE/FR</div>
+                      <div class="finding-title">Pre-Consent Marketing Tracker Firing in DE/FR</div>
                       <div class="finding-sub">2 analytics/marketing beacons execute before EU opt-in (GDPR Art. 7)</div>
                     </div>
                     <span class="status-tag status-tag-flag">Flagged</span>
@@ -2706,7 +3070,7 @@
                 <div class="finding-item">
                   <button type="button" class="finding-trigger" aria-expanded="false">
                     <div>
-                      <div class="finding-title">Missing Art. 12 plain-English retention notice</div>
+                      <div class="finding-title">Missing Art. 12 Plain-English Retention Notice</div>
                       <div class="finding-sub">Privacy footer lacks explicit EU log retention period (GDPR Art. 12)</div>
                     </div>
                     <span class="status-tag status-tag-flag">Flagged</span>
@@ -2861,7 +3225,7 @@
         <div class="section-header-row reveal">
           <div class="section-header">
             <span class="eyebrow eyebrow-emerald">Upgrade 01 &middot; Transatlantic Data Sovereignty</span>
-            <h2 class="section-title">Keep European audit telemetry strictly inside Ireland.</h2>
+            <h2 class="section-title">Keep European Audit Telemetry Strictly Inside Ireland</h2>
             <p class="section-subtitle">
               European procurement teams routinely block U.S. compliance tools that ship audit logs back across the Atlantic. Toggle below to compare ReguLens Cloud's Ireland-first topology against legacy U.S. tooling.
             </p>
@@ -2957,6 +3321,38 @@
                 <text x="550" y="214" text-anchor="middle" fill="#141413" font-family="Instrument Sans, sans-serif" font-size="9.5" font-weight="600">Triggers Schrems II / GDPR Ch. V Procurement Hold</text>
               </g>
             </svg>
+
+            <!-- Mobile-Friendly Stacked Residency Topology (Shown <= 760px, Synced with Mode Switcher) -->
+            <div class="map-mobile-flow" id="map-mobile-flow" aria-label="Transatlantic Data Routing Flow">
+              <div class="m-node m-node-us">
+                <div class="m-node-eyebrow">North America &middot; Client Environment</div>
+                <div class="m-node-title">U.S. Mid-Market SaaS</div>
+                <div class="m-node-sub">50&ndash;250 Employees &middot; Selling to EU</div>
+                <div class="m-node-note" id="m-us-note">Read-only TLS 1.3 metadata webhooks</div>
+              </div>
+
+              <div class="m-connector" id="m-connector">
+                <div class="m-connector-arrow" id="m-connector-arrow">&darr;</div>
+                <div class="m-connector-pill" id="m-connector-pill">Encrypted Metadata Only &rarr; Stored 100% in Ireland</div>
+              </div>
+
+              <div class="m-eu-box" id="m-eu-box">
+                <div class="m-eu-label" id="m-eu-label">Republic of Ireland &middot; EU Single Market</div>
+                <div class="m-eu-grid">
+                  <div class="m-node m-node-ie">
+                    <div class="m-node-eyebrow" style="color: var(--emerald);">Dublin (D02)</div>
+                    <div class="m-node-title">AWS eu-west-1</div>
+                    <div class="m-node-sub">Virtual Regulatory Desk &amp; DPC Alignment</div>
+                  </div>
+                  <div class="m-rail-pill">2.5h Rail / Fiber</div>
+                  <div class="m-node m-node-ie">
+                    <div class="m-node-eyebrow">Cork (T12)</div>
+                    <div class="m-node-title">Engineering Hub</div>
+                    <div class="m-node-sub">Deterministic Rulebook &amp; Core SaaS Delivery</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2999,7 +3395,7 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="eyebrow eyebrow-emerald">Upgrade 02 &middot; Procurement Deal Velocity</span>
-          <h2 class="section-title">Turn 4-week European buyer security reviews into a 60-second export.</h2>
+          <h2 class="section-title">Turn 4-Week European Buyer Security Reviews Into a 60-Second Export</h2>
           <p class="section-subtitle">
             Mid-market U.S. deals stall when European enterprise procurement sends privacy and AI questionnaires. Click below to watch ReguLens auto-populate verified technical answers—and enforce the Hard Legal Wall where counsel is required.
           </p>
@@ -3091,7 +3487,7 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="eyebrow eyebrow-emerald">Upgrade 03 &middot; Deterministic Engineering</span>
-          <h2 class="section-title">Why zero AI guesswork matters on an EU audit.</h2>
+          <h2 class="section-title">Why Zero AI Guesswork Matters on an EU Audit</h2>
           <p class="section-subtitle">
             Probabilistic LLMs hallucinate legal clauses and produce inconsistent audit outputs. ReguLens Cloud encodes statutory obligations into deterministic JSON rulebooks reviewed quarterly by licensed Dublin privacy counsel.
           </p>
@@ -3123,7 +3519,7 @@
             <div class="rule-plain-pane">
               <div>
                 <span class="eyebrow eyebrow-emerald" id="rule-plain-eyebrow">Plain-English Regulatory Rule</span>
-                <h3 class="rule-detail-title" id="rule-plain-title">GDPR Art. 7 — Pre-Consent Cookie &amp; Tracker Gate</h3>
+                <h3 class="rule-detail-title" id="rule-plain-title">GDPR Art. 7: Pre-Consent Cookie &amp; Tracker Gate</h3>
                 <p class="rule-detail-text" id="rule-plain-checks"></p>
                 <p class="rule-detail-text" id="rule-plain-why" style="margin-bottom: 0;"></p>
               </div>
@@ -3152,7 +3548,7 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="eyebrow eyebrow-emerald">Year 1 MVP Scope</span>
-          <h2 class="section-title">Six bounded workflows. Zero enterprise bloat.</h2>
+          <h2 class="section-title">Six Bounded Workflows. Zero Enterprise Bloat.</h2>
           <p class="section-subtitle">
             Built by our Cork engineering hub to automate the exact technical compliance evidence European buyers request—nothing more, nothing less.
           </p>
@@ -3207,7 +3603,7 @@
         <!-- Signature 56% / 44% Hard Legal Wall Split -->
         <div class="section-header reveal" style="margin-bottom: 28px;">
           <span class="eyebrow eyebrow-terracotta">Signature Architecture &middot; Scope &amp; Liability Boundary</span>
-          <h2 class="section-title">Software flags technical gaps. Licensed Dublin counsel owns the law.</h2>
+          <h2 class="section-title">Software Flags Technical Gaps. Licensed Dublin Counsel Owns the Law.</h2>
         </div>
 
         <div class="legal-wall-frame reveal">
@@ -3217,7 +3613,7 @@
               <div class="wall-header-row">
                 <span class="wall-tag wall-tag-emerald">What ReguLens Software Automates</span>
               </div>
-              <h3 class="wall-heading">Deterministic technical checks your engineering team can verify and fix.</h3>
+              <h3 class="wall-heading">Deterministic Technical Checks Your Engineering Team Can Verify and Fix</h3>
               <ul class="check-list">
                 <li>
                   <span class="check-marker" aria-hidden="true">
@@ -3257,7 +3653,7 @@
                 <span class="wall-tag wall-tag-terracotta">Outside the Software</span>
                 <span class="wall-pill-terracotta">Hard Legal Wall &middot; Not Legal Advice</span>
               </div>
-              <h3 class="wall-heading wall-heading-terracotta">What stays with licensed Dublin counsel.</h3>
+              <h3 class="wall-heading wall-heading-terracotta">What Stays With Licensed Dublin Counsel</h3>
               <ul class="legal-list">
                 <li>
                   <span class="legal-dash" aria-hidden="true">&mdash;</span>
@@ -3292,11 +3688,11 @@
           </div>
 
           <div class="router-pills" role="group" aria-label="Boundary Routing Scenarios">
-            <button type="button" class="router-pill is-active-software" data-route="pixel">Detect a Meta pixel firing before consent</button>
-            <button type="button" class="router-pill" data-route="dpc">Draft a bespoke legal defense for a DPC letter</button>
-            <button type="button" class="router-pill" data-route="chatbot">Tag our support chatbot for Art. 50 disclosure</button>
-            <button type="button" class="router-pill" data-route="msa">Negotiate custom liability caps in an EU MSA</button>
-            <button type="button" class="router-pill" data-route="packet">Generate a buyer-ready Evidence Packet</button>
+            <button type="button" class="router-pill is-active-software" data-route="pixel">Detect a Meta Pixel Firing Before Consent</button>
+            <button type="button" class="router-pill" data-route="dpc">Draft a Bespoke Legal Defense for a DPC Letter</button>
+            <button type="button" class="router-pill" data-route="chatbot">Tag Our Support Chatbot for Art. 50 Disclosure</button>
+            <button type="button" class="router-pill" data-route="msa">Negotiate Custom Liability Caps in an EU MSA</button>
+            <button type="button" class="router-pill" data-route="packet">Generate a Buyer-Ready Evidence Packet</button>
           </div>
 
           <div class="router-verdict" id="router-verdict" aria-live="polite">
@@ -3320,7 +3716,7 @@
         <div class="trust-banner-grid reveal">
           <div>
             <span class="eyebrow eyebrow-emerald">Buyer-Facing Packaging</span>
-            <h2 class="section-title">Embeddable EU Digital Trust Center Badge.</h2>
+            <h2 class="section-title">Embeddable EU Digital Trust Center Badge</h2>
             <p class="section-subtitle" style="margin-bottom: 18px;">
               Place a clean, white-label verification badge in your website footer or security page. European buyers can inspect your current AWS eu-west-1 residency and deterministic scan posture before starting procurement.
             </p>
@@ -3386,7 +3782,7 @@
         <div class="section-header-row reveal">
           <div class="section-header">
             <span class="eyebrow eyebrow-emerald">Transparent Pricing &middot; Growth Baseline</span>
-            <h2 class="section-title">One flat annual subscription. Zero consulting markups.</h2>
+            <h2 class="section-title">One Flat Annual Subscription. Zero Consulting Markups.</h2>
             <p class="section-subtitle">
               GDPR and EU AI Act readiness bundled into one predictable annual contract designed for 50&ndash;250 employee U.S. software teams.
             </p>
@@ -3504,28 +3900,28 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Annual Cost Range</strong></td>
-                <td id="cmp-smb-price">&euro;4,600 &ndash; &euro;13,800 / yr</td>
-                <td class="col-regulens" id="cmp-regulens-price">&euro;27,600 / yr flat</td>
-                <td id="cmp-legacy-price">&euro;92,000 &ndash; &euro;276,000+ / yr</td>
+                <td class="cmp-dim"><strong>Annual Cost Range</strong></td>
+                <td data-label="Entry-Level SMB Cookie Widgets" id="cmp-smb-price">&euro;4,600 &ndash; &euro;13,800 / yr</td>
+                <td data-label="ReguLens Cloud (Bundled)" class="col-regulens" id="cmp-regulens-price">&euro;27,600 / yr flat</td>
+                <td data-label="Legacy Enterprise Suites" id="cmp-legacy-price">&euro;92,000 &ndash; &euro;276,000+ / yr</td>
               </tr>
               <tr>
-                <td><strong>Consulting / Setup Fees</strong></td>
-                <td>Self-serve</td>
-                <td class="col-regulens">0% (30-min read-only setup)</td>
-                <td>20%&ndash;40% mandatory advisory</td>
+                <td class="cmp-dim"><strong>Consulting / Setup Fees</strong></td>
+                <td data-label="Entry-Level SMB Cookie Widgets">Self-serve</td>
+                <td data-label="ReguLens Cloud (Bundled)" class="col-regulens">0% (30-min read-only setup)</td>
+                <td data-label="Legacy Enterprise Suites">20%&ndash;40% mandatory advisory</td>
               </tr>
               <tr>
-                <td><strong>GDPR + EU AI Act Scope</strong></td>
-                <td><span class="status-tag status-tag-flag">Cookie banners only</span></td>
-                <td class="col-regulens">All 6 GDPR + AI Act Art. 50 workflows</td>
-                <td>Unbundled paid add-on modules</td>
+                <td class="cmp-dim"><strong>GDPR + EU AI Act Scope</strong></td>
+                <td data-label="Entry-Level SMB Cookie Widgets"><span class="status-tag status-tag-flag">Cookie banners only</span></td>
+                <td data-label="ReguLens Cloud (Bundled)" class="col-regulens">All 6 GDPR + AI Act Art. 50 workflows</td>
+                <td data-label="Legacy Enterprise Suites">Unbundled paid add-on modules</td>
               </tr>
               <tr>
-                <td><strong>Data Residency &amp; Inference</strong></td>
-                <td>Often U.S.-hosted</td>
-                <td class="col-regulens">100% Ireland (eu-west-1) &middot; Zero GenAI</td>
-                <td>Multi-region; complex setup</td>
+                <td class="cmp-dim"><strong>Data Residency &amp; Inference</strong></td>
+                <td data-label="Entry-Level SMB Cookie Widgets">Often U.S.-hosted</td>
+                <td data-label="ReguLens Cloud (Bundled)" class="col-regulens">100% Ireland (eu-west-1) &middot; Zero GenAI</td>
+                <td data-label="Legacy Enterprise Suites">Multi-region; complex setup</td>
               </tr>
             </tbody>
           </table>
@@ -3543,14 +3939,8 @@
       <div class="footer-grid">
         <div>
           <a href="#top" class="brand-link">
-            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="1.75" y="1.75" width="24.5" height="24.5" rx="4" stroke="#141413" stroke-width="1.5"/>
-              <circle cx="14" cy="14" r="6.5" stroke="#064E3B" stroke-width="1.5"/>
-              <line x1="14" y1="3.5" x2="14" y2="7.5" stroke="#141413" stroke-width="1.5"/>
-              <line x1="14" y1="20.5" x2="14" y2="24.5" stroke="#141413" stroke-width="1.5"/>
-              <circle cx="14" cy="14" r="2" fill="#064E3B"/>
-            </svg>
-            <span class="brand-wordmark" style="font-size: 1.05rem;">ReguLens Cloud</span>
+            <svg class="rl-logo2" width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
+            <span class="brand-wordmark" style="font-size: 1.05rem;">ReguLens <span class="wm-cloud">Cloud</span></span>
           </a>
           <p class="footer-tagline">
             Deterministic, rule-based GDPR and EU AI Act compliance diagnostics for mid-market U.S. software teams (50&ndash;250 employees) selling into Europe.
@@ -3718,11 +4108,7 @@
           <div class="dossier-masthead">
             <div>
               <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 8px;">
-                <svg width="22" height="22" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                  <rect x="1.75" y="1.75" width="24.5" height="24.5" rx="4" stroke="#141413" stroke-width="1.5"/>
-                  <circle cx="14" cy="14" r="6.5" stroke="#064E3B" stroke-width="1.5"/>
-                  <circle cx="14" cy="14" r="2" fill="#064E3B"/>
-                </svg>
+                <svg class="rl-logo2" width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
                 <strong style="font-family: var(--font-display); font-size: 1.05rem;">ReguLens Cloud</strong>
               </div>
               <h2 style="font-size: 1.55rem; margin-bottom: 4px;">Audit-Ready Technical Evidence Dossier</h2>
@@ -3763,7 +4149,7 @@
           </div>
 
           <div class="dossier-section">
-            <h4 class="dossier-h4" style="color: var(--terracotta);">03. Hard Legal Wall &mdash; Escalations Reserved for Licensed Dublin Counsel</h4>
+            <h4 class="dossier-h4" style="color: var(--terracotta);">03. Hard Legal Wall: Escalations Reserved for Licensed Dublin Counsel</h4>
             <div id="dos-legal-list" style="margin-bottom: 14px;"></div>
             <div class="dossier-legal-stamp">
               <strong>HARD LEGAL WALL &middot; NOT LEGAL ADVICE:</strong> This dossier documents automated, deterministic technical checks executed on AWS eu-west-1 (Dublin) under Rulebook v2.4 (reviewed quarterly by Dublin privacy counsel). ReguLens Cloud does not provide legal advice, custom SCC/DPA drafting, or representation in Irish DPC proceedings. All flagged legal items must be reviewed directly by licensed external counsel.
@@ -4144,6 +4530,26 @@
           usSub.textContent = isLegacy ? 'Legacy tool exports EU logs to U.S.' : 'Read-only TLS 1.3 metadata webhooks';
           usSub.setAttribute('fill', isLegacy ? '#C2410C' : '#064E3B');
         }
+        // Sync Mobile Residency Flow Card
+        const mUsNote = document.getElementById('m-us-note');
+        const mConnector = document.getElementById('m-connector');
+        const mArrow = document.getElementById('m-connector-arrow');
+        const mPill = document.getElementById('m-connector-pill');
+        const mEuBox = document.getElementById('m-eu-box');
+        const mEuLabel = document.getElementById('m-eu-label');
+        if (mUsNote) {
+          mUsNote.textContent = isLegacy ? 'Legacy tool exports EU logs back to U.S.' : 'Read-only TLS 1.3 metadata webhooks';
+          mUsNote.classList.toggle('is-legacy', isLegacy);
+        }
+        if (mConnector) mConnector.classList.toggle('is-legacy', isLegacy);
+        if (mArrow) mArrow.innerHTML = isLegacy ? '&uarr;' : '&darr;';
+        if (mPill) {
+          mPill.textContent = isLegacy
+            ? 'ALERT: EU Data Bounced to U.S. Servers (Triggers Schrems II / GDPR Ch. V Hold)'
+            : 'Encrypted Metadata Only \u2192 Stored 100% in Ireland';
+        }
+        if (mEuBox) mEuBox.classList.toggle('is-legacy', isLegacy);
+        if (mEuLabel) mEuLabel.classList.toggle('is-legacy', isLegacy);
       }
 
       if (mapBtnReg) mapBtnReg.addEventListener('click', function () { setMapMode('regulens'); });
@@ -4300,7 +4706,7 @@
          ---------------------------------------------------------------------- */
       const rulebookData = {
         gdpr7: {
-          title: 'GDPR Art. 7 — Pre-Consent Cookie & Tracker Gate',
+          title: 'GDPR Art. 7: Pre-Consent Cookie & Tracker Gate',
           checks: 'Executes a headless EU-origin browser probe from AWS eu-west-1 before clicking any consent banner button. Any third-party marketing, ad-retargeting, or non-essential analytics request firing prior to opt-in immediately fails the rule.',
           why: 'Why EU buyers ask: Enterprise DPOs run quick browser-network checks during vendor evaluation; pre-consent pixels are the #1 fastest trigger for a procurement hold.',
           audit: 'Quarterly Dublin Counsel Audit: Rule predicate verified against Irish DPC cookie guidance and ePrivacy Regulations (Rulebook v2.4).',
@@ -4308,7 +4714,7 @@
           output: 'Deterministic Sample Output: FAIL (2 beacons detected: meta-pixel.js, hubspot-track.js) \u2192 Jira ENG-412 generated.'
         },
         ai50: {
-          title: 'EU AI Act Art. 50 — User-Facing AI Disclosure Check',
+          title: 'EU AI Act Art. 50: User-Facing AI Disclosure Check',
           checks: 'Verifies that every customer-facing conversational or synthetic-content interface registered in the AI System Inventory renders an unambiguous automated-system disclosure visible to EU sessions at initialization.',
           why: 'Why EU buyers ask: Following the August 2026 EU AI Act enforcement wave, European buyers require documented Article 50 transparency proof before deploying third-party AI features.',
           audit: 'Quarterly Dublin Counsel Audit: Rule logic mapped directly to Regulation (EU) 2024/1689 Article 50(1) transparency obligations.',
@@ -4316,7 +4722,7 @@
           output: 'Deterministic Sample Output: REVIEW (Support-Bot-v3 missing initial disclosure header) \u2192 Jira AI-204 generated.'
         },
         gdpr30: {
-          title: 'GDPR Art. 30 — RoPA & DSAR Document Allocation',
+          title: 'GDPR Art. 30: RoPA & DSAR Document Allocation',
           checks: 'Validates that every active cloud sub-processor connected via read-only API metadata has an assigned processing purpose, EU transfer mechanism tag, and DSAR owner recorded in your Article 30 manifest.',
           why: 'Why EU buyers ask: Procurement questionnaires require a current sub-processor register and Article 30 Record of Processing Activities before signing a Data Processing Agreement.',
           audit: 'Quarterly Dublin Counsel Audit: Manifest fields aligned with GDPR Article 30(1)-(2) controller/processor recordkeeping clauses.',
@@ -4324,7 +4730,7 @@
           output: 'Deterministic Sample Output: PASS (14/14 sub-processors indexed with complete metadata) \u2192 Attached to PKT-2026-1148.'
         },
         residency: {
-          title: 'EU Data Residency — eu-west-1 Telemetry Boundary Lock',
+          title: 'EU Data Residency: eu-west-1 Telemetry Boundary Lock',
           checks: 'Inspects inbound webhook payloads and storage bucket policies to verify that compliance telemetry contains metadata only (zero raw end-user PII) and writes exclusively to AWS eu-west-1 (Dublin).',
           why: 'Why EU buyers ask: Eliminates GDPR Chapter V / Schrems II cross-border transfer objections during European enterprise security architecture reviews.',
           audit: 'Quarterly Dublin Counsel Audit: Architecture lock verified to maintain strict Irish data localization for all audit logs.',
@@ -4505,7 +4911,7 @@
           score: 72,
           techTickets: [
             { id: 'AI-608', rule: 'EUAI-ART50-01', title: '3 customer-facing AI assistants missing Art. 50(1) notice', desc: 'Embed mandatory automated-system disclosure headers on /demo, /docs, and embedded SDK widget.' },
-            { id: 'DOC-114', rule: 'GDPR-ART12-NOTICE', title: 'Missing Art. 12 plain-English retention notice on /privacy', desc: 'Publish explicit 90-day log retention window and EU DSAR contact block.' }
+            { id: 'DOC-114', rule: 'GDPR-ART12-NOTICE', title: 'Missing Art. 12 Plain-English Retention Notice on /privacy', desc: 'Publish explicit 90-day log retention window and EU DSAR contact block.' }
           ],
           legalItems: [
             { rule: 'LEGAL-AI-14', title: 'Annex III High-Risk Classification Edge Case', desc: 'Automated HR screening feature touches EU AI Act Annex III boundaries; escalate to Dublin counsel for formal opinion.' }

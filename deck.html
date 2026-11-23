@@ -3833,6 +3833,99 @@
       transition: none !important;
       transform: none !important;
     }
+
+    /* ==========================================================================
+       UNIFIED INTERIOR HEADER STYLE #3 ACROSS ALL SLIDES 02–14
+       ========================================================================== */
+    .stage-shell > section.slide .slide-topbar {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding-bottom: 13px !important;
+      border-bottom: 1px solid #E2DDD5 !important;
+      flex-shrink: 0 !important;
+      gap: 16px !important;
+    }
+
+    .stage-shell > section.slide .slide-topbar .brand-lockup {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-shrink: 0 !important;
+    }
+
+    .stage-shell > section.slide .slide-topbar .brand-wordmark {
+      font-family: 'Bricolage Grotesque', Georgia, serif !important;
+      font-size: 21px !important;
+      letter-spacing: -0.025em !important;
+      line-height: 1 !important;
+      display: inline-flex !important;
+      align-items: baseline !important;
+      gap: 4px !important;
+    }
+
+    .stage-shell > section.slide .slide-topbar .wm-reg {
+      font-weight: 700 !important;
+      color: #141413 !important;
+    }
+
+    .stage-shell > section.slide .slide-topbar .wm-cloud {
+      font-weight: 600 !important;
+      color: #064E3B !important;
+    }
+
+    .stage-shell > section.slide .slide-topbar .topbar-right {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      flex-shrink: 0 !important;
+    }
+
+    .stage-shell > section.slide .slide-topbar .kicker-text {
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 13.5px !important;
+      font-weight: 600 !important;
+      color: #57534E !important;
+      letter-spacing: -0.005em !important;
+      text-transform: none !important;
+    }
+
+    .stage-shell > section.slide .slide-topbar .slide-counter-pill {
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      color: #064E3B !important;
+      background: #E6F4EF !important;
+      border: 1px solid #B7DDD0 !important;
+      padding: 4px 11px !important;
+      border-radius: 999px !important;
+      white-space: nowrap !important;
+      font-variant-numeric: tabular-nums !important;
+    }
+
+    /* Slide 04 interactive slider sits cleanly between logo and right header */
+    .stage-shell > section.slide.batch-1 .slide-topbar .slider-control {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    /* Clean compact mobile bottom dock for QR 02 phone visitors */
+    @media (max-width: 600px) {
+      .presenter-dock {
+        bottom: 10px;
+        padding: 5px 8px;
+        gap: 4px;
+      }
+      .dock-btn {
+        padding: 6px 9px;
+        font-size: 11.5px;
+      }
+      .dock-counter {
+        min-width: 52px;
+        font-size: 11.5px;
+        padding: 0 4px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -3889,16 +3982,16 @@
             </div>
 
             <div class="qr-card">
-              <div class="qr-box" id="qrSlotWebsite" data-qr-url="https://justinloretz.github.io/ReguLens-Cloud/"></div>
+              <div class="qr-box" id="qrSlotWebsite" data-qr-url="https://regulens-cloud.github.io/"></div>
               <div class="qr-info">
                 <div class="qr-num">QR 01</div>
                 <div class="qr-title" data-editable>Live Product Website</div>
-                <div class="qr-sub" id="qrSubWebsite" data-editable>justinloretz.github.io/ReguLens-Cloud</div>
+                <div class="qr-sub" id="qrSubWebsite" data-editable>regulens-cloud.github.io</div>
               </div>
             </div>
 
             <div class="qr-card">
-              <div class="qr-box" id="qrSlotDeck" data-qr-url="https://justinloretz.github.io/ReguLens-Cloud/deck.html"></div>
+              <div class="qr-box" id="qrSlotDeck" data-qr-url="https://regulens-cloud.github.io/deck.html?present=1"></div>
               <div class="qr-info">
                 <div class="qr-num">QR 02</div>
                 <div class="qr-title" data-editable>Interactive Deck &amp; Q&amp;A</div>
@@ -3926,13 +4019,14 @@
       <!-- SLIDE_START:02 -->
       <section class="slide batch-1" data-slide="02" data-title="02 · Market Opportunity" data-presenter="Bianka Bukovics · Market &amp; Customers">
         <header class="slide-topbar">
-          <div class="topbar-left">
-            <div class="brand-lockup">
-              <span class="brand-mark-slot" data-size="26"><svg class="rl-logo2" width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg></span>
-              <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
-            </div>
+          <div class="brand-lockup">
+            <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
+            <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="slide-meta" data-editable>02 / 14 · Market Opportunity</div>
+<div class="topbar-right">
+            <span class="kicker-text editable">Market Opportunity</span>
+            <span class="slide-counter-pill">02 / 14</span>
+          </div>
         </header>
 
         <h2 class="slide-headline" data-editable>European Buyers Stall U.S. Software Deals Over Privacy &amp; AI Proof</h2>
@@ -4007,13 +4101,14 @@
       <!-- SLIDE_START:03 -->
       <section class="slide batch-1" data-slide="03" data-title="03 · Product &amp; Legal Boundary" data-presenter="Alexandria Marchesini · Product &amp; Engineering">
         <header class="slide-topbar">
-          <div class="topbar-left">
-            <div class="brand-lockup">
-              <span class="brand-mark-slot" data-size="26"><svg class="rl-logo2" width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg></span>
-              <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
-            </div>
+          <div class="brand-lockup">
+            <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
+            <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="slide-meta" data-editable>03 / 14 · Product &amp; Legal Boundary</div>
+<div class="topbar-right">
+            <span class="kicker-text editable">Product &amp; Legal Boundary</span>
+            <span class="slide-counter-pill">03 / 14</span>
+          </div>
         </header>
 
         <h2 class="slide-headline" data-editable>Software Flags the Gaps. Dublin Lawyers Own the Law.</h2>
@@ -4094,22 +4189,21 @@
       <!-- SLIDE_START:04 -->
       <section class="slide slide--finance batch-1" data-slide="04" data-title="04 · Core Financial Reality" data-presenter="Justin Loretz · Finance &amp; Strategy">
         <header class="slide-topbar">
-          <div class="topbar-left">
-            <div class="brand-lockup">
-              <span class="brand-mark-slot" data-size="26"><svg class="rl-logo2" width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg></span>
-              <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
-            </div>
-            <span class="slide-meta" data-editable>04 / 14 · Core Financial Reality</span>
+          <div class="brand-lockup">
+            <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
+            <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-
-          <!-- Interactive Client Count Simulator (Hidden Automatically on Print / PDF) -->
           <div class="slider-control no-print">
             <label for="clientSlider" class="slider-label">Test Client Count: <span id="sliderCountDisplay" class="slider-count">8</span></label>
             <input type="range" id="clientSlider" class="client-range" min="8" max="17" step="1" value="8" aria-label="Test Active Client Count from 8 to 17" />
           </div>
+          <div class="topbar-right">
+            <span class="kicker-text editable">Core Financial Reality</span>
+            <span class="slide-counter-pill">04 / 14</span>
+          </div>
         </header>
 
-        <h2 class="slide-headline" data-editable>Eight Clients Cover 90% of Launch Costs—Break-Even Requires Nine</h2>
+        <h2 class="slide-headline" data-editable>Eight Clients Cover 90% of Launch Costs. Break-Even Requires Nine.</h2>
 
         <!-- Precision Vector Stacked Column Shortfall Chart (Zero Blur, Zero Label Collision) -->
         <div class="chart-card">
@@ -4154,11 +4248,13 @@
       <section class="slide batch-2" data-slide="05" data-title="05 · Competitive Landscape" data-presenter="Bianka Bukovics · Market &amp; Competitors">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-kicker editable">05 / 14 · Competitive Landscape</div>
+<div class="topbar-right">
+            <span class="kicker-text editable">Competitive Landscape</span>
+            <span class="slide-counter-pill">05 / 14</span>
+          </div>
         </header>
 
         <div class="slide-header-row">
@@ -4286,11 +4382,13 @@
       <section class="slide batch-2" data-slide="06" data-title="06 · Target Market &amp; Discovery" data-presenter="Bianka Bukovics · Customer Discovery">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-kicker editable">06 / 14 · Target Market &amp; Discovery</div>
+<div class="topbar-right">
+            <span class="kicker-text editable">Target Market &amp; Discovery</span>
+            <span class="slide-counter-pill">06 / 14</span>
+          </div>
         </header>
 
         <div class="slide-header-row">
@@ -4418,11 +4516,13 @@
       <section class="slide batch-2" data-slide="07" data-title="07 · Entry Mode &amp; Governance" data-presenter="Gabriella Rinaldi · Entry Mode &amp; Structure">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-kicker editable">07 / 14 · Entry Mode &amp; Governance</div>
+<div class="topbar-right">
+            <span class="kicker-text editable">Entry Mode &amp; Governance</span>
+            <span class="slide-counter-pill">07 / 14</span>
+          </div>
         </header>
 
         <div class="slide-header-row">
@@ -4503,11 +4603,13 @@
       <section class="slide batch-2" data-slide="08" data-title="08 · Location &amp; Site Selection" data-presenter="Alexandria Marchesini · Location &amp; Staffing">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-kicker editable">08 / 14 · Location &amp; Site Selection</div>
+<div class="topbar-right">
+            <span class="kicker-text editable">Location &amp; Site Selection</span>
+            <span class="slide-counter-pill">08 / 14</span>
+          </div>
         </header>
 
         <div class="slide-header-row">
@@ -4583,11 +4685,10 @@
       <section class="slide batch-3" data-slide="09" data-title="09 · Cloud Infrastructure &amp; Channels" data-presenter="Alexandria Marchesini &amp; Gabriella Rinaldi">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOCKED LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-right">
+<div class="topbar-right">
             <span class="kicker-text editable">Cloud Infrastructure &amp; Channels</span>
             <span class="slide-counter-pill">09 / 14</span>
           </div>
@@ -4800,11 +4901,10 @@
       <section class="slide batch-3" data-slide="10" data-title="10 · Cork Staffing &amp; Internal MIS" data-presenter="Alexandria Marchesini · Staffing &amp; Controls">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOCKED LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-right">
+<div class="topbar-right">
             <span class="kicker-text editable">Cork Staffing &amp; Internal MIS</span>
             <span class="slide-counter-pill">10 / 14</span>
           </div>
@@ -4933,12 +5033,11 @@
       <section class="slide batch-3" data-slide="11" data-title="11 · Financial Visual 2: Cash &amp; Accounting" data-presenter="Justin Loretz · Finance &amp; Governance">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOCKED LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-right">
-            <span class="kicker-text editable">Financial Visual 2 · Cash &amp; Accounting</span>
+<div class="topbar-right">
+            <span class="kicker-text editable">Cash &amp; Accounting Reality</span>
             <span class="slide-counter-pill">11 / 14</span>
           </div>
         </header>
@@ -5178,12 +5277,11 @@
       <section class="slide batch-4" data-slide="12" data-title="12 · Stress Tests &amp; Key Risks" data-presenter="Justin Loretz · Finance &amp; Risk">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-right">
-            <span class="kicker-text editable">Modules 5 &amp; 6 · Risks &amp; Sensitivity</span>
+<div class="topbar-right">
+            <span class="kicker-text editable">Stress Tests &amp; Key Risks</span>
             <span class="slide-counter-pill">12 / 14</span>
           </div>
         </header>
@@ -5326,12 +5424,11 @@
       <section class="slide batch-4" data-slide="13" data-title="13 · Host-Country Impact &amp; Ethics" data-presenter="Bianka Bukovics · Success &amp; Ethics">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-right">
-            <span class="kicker-text editable">Module 16 · Impact &amp; Ethics</span>
+<div class="topbar-right">
+            <span class="kicker-text editable">Host-Country Impact &amp; Ethics</span>
             <span class="slide-counter-pill">13 / 14</span>
           </div>
         </header>
@@ -5438,12 +5535,11 @@
       <section class="slide batch-4" data-slide="14" data-title="14 · The 5 Irreversible Decisions &amp; Launch Gates" data-presenter="Justin Loretz · Team Closing Recommendation">
         <header class="slide-topbar">
           <div class="brand-lockup">
-            <!-- PERMANENT LOGO 2: CLOUD APERTURE -->
             <svg class="rl-logo2" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.2 21.6H20.9C23.7 21.6 26 19.3 26 16.4C26 13.8 24.1 11.6 21.6 11.2C20.9 7.6 17.8 5 14 5C10.5 5 7.6 7.3 6.7 10.5C4.0 10.9 2 13.3 2 16.1C2 19.2 4.3 21.6 7.2 21.6Z" fill="#064E3B"/><circle cx="14.1" cy="14.8" r="4.6" fill="#FAF9F6"/><circle cx="14.1" cy="14.8" r="2.35" stroke="#C2410C" stroke-width="1.8" fill="none"/></svg>
             <span class="brand-wordmark"><span class="wm-reg">ReguLens</span> <span class="wm-cloud">Cloud</span></span>
           </div>
-          <div class="topbar-right">
-            <span class="kicker-text editable">Strategic Focus · Launch Gates</span>
+<div class="topbar-right">
+            <span class="kicker-text editable">Decisions &amp; Launch Gates</span>
             <span class="slide-counter-pill">14 / 14</span>
           </div>
         </header>
@@ -5611,11 +5707,11 @@
       <h3 id="qrModalHeading">Set Slide 01 Poster QR Code URLs</h3>
       <div class="qr-field">
         <label for="inputQrWebsite">QR 01 — Live Product Website URL</label>
-        <input type="url" id="inputQrWebsite" placeholder="https://justinloretz.github.io/ReguLens-Cloud/" />
+        <input type="url" id="inputQrWebsite" placeholder="https://regulens-cloud.github.io/" />
       </div>
       <div class="qr-field">
         <label for="inputQrDeck">QR 02 — Interactive Deck &amp; Q&amp;A URL</label>
-        <input type="url" id="inputQrDeck" placeholder="https://justinloretz.github.io/ReguLens-Cloud/deck.html" />
+        <input type="url" id="inputQrDeck" placeholder="https://regulens-cloud.github.io/deck.html?present=1" />
       </div>
       <div class="qr-modal-actions">
         <button type="button" class="notes-close-btn" id="qrModalCancel">Cancel</button>
@@ -5831,7 +5927,7 @@
 
       function renderSingleQR(slotEl) {
         if (!slotEl) return;
-        const url = (slotEl.getAttribute('data-qr-url') || '').trim() || 'https://justinloretz.github.io/ReguLens-Cloud/';
+        const url = (slotEl.getAttribute('data-qr-url') || '').trim() || 'https://regulens-cloud.github.io/';
         try {
           if (typeof window.qrcode === 'function') {
             const qr = window.qrcode(0, 'M');
